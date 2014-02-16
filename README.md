@@ -11,7 +11,7 @@ Capture d'images via la webcam de l'utilisateur avec la possibilité d'appliquer
 
 Demo
 ========================
-**Due to the use of getUserMedia, the application works perfectly only in Google Chrome**
+**Due to the use of getUserMedia, this application works perfectly only in Google Chrome**
 
 You can find demo of the final application at the link below
 [Application Demo](http://teachersdunet.hostei.com/camera)
