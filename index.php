@@ -14,15 +14,7 @@
 				font-family: "Comic Sans MS", sans-serif;
 			}
 
-			#image{
-				border: none;
-			}
-			
-			#video{
-				border: 2px solid #FFF;
-			}
-
-			#image{
+			#video, #image{
 				border: 2px solid #FFF;
 			}
 
@@ -43,6 +35,8 @@
 		<video id="video" width="640" height="480" autoplay></video>
 		<canvas id="canvas" width="640" height="480" style="display:none;"></canvas>
 		<img id="image" src="" alt="" width="640" height="480" />
+
+		<br/>
 
 		<button id="snap">Prendre une photo</button>
 		<button id="snap_black_white">Convertir en blanc et noir</button>
@@ -68,22 +62,22 @@
 						console.log("Erreur Capture Video: ", error.code); 
 					};
 
-					if(navigator.getUserMedia) { 
+					if(navigator.getUserMedia) { //Standard
 						navigator.getUserMedia(videoParams, function(stream) {
 							video.src = stream;
 							video.play();
 						}, errorCallback);
-					} else if(navigator.webkitGetUserMedia) { 
+					} else if(navigator.webkitGetUserMedia) { //Webkit
 						navigator.webkitGetUserMedia(videoParams, function(stream){
 							video.src = window.webkitURL.createObjectURL(stream);
 							video.play();
 						}, errorCallback);
-					} else if(navigator.mozGetUserMedia) { 
+					} else if(navigator.mozGetUserMedia) { //Mozilla
 						navigator.mozGetUserMedia(videoParams, function(stream){
 							video.src = window.URL.createObjectURL(stream);
 							video.play();
 						}, errorCallback);
-					} else if(navigator.msGetUserMedia) { 
+					} else if(navigator.msGetUserMedia) { //IE
 						navigator.msGetUserMedia(videoParams, function(stream){
 							video.src = window.URL.createObjectURL(stream);
 							video.play();
