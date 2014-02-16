@@ -18,9 +18,12 @@
 				border: none;
 			}
 			
-			#video, #image{
+			#video{
 				border: 2px solid #FFF;
-				padding: 5px;
+			}
+
+			#image{
+				border: 2px solid #FFF;
 			}
 
 			#snap,#snap_black_white,#send_snap,#snap_inverse{
